@@ -1,0 +1,1 @@
+opkg update && opkg install dockerd luci-app-dockerman
