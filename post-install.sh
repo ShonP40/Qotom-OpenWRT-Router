@@ -1,1 +1,1 @@
-opkg update && opkg install dockerd luci-app-dockerman
+apk update && apk add dockerd luci-app-dockerman speedtest-go
