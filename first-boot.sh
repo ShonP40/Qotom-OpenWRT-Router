@@ -1,3 +1,9 @@
+if ! grep -q "pcie_aspm=off" /boot/grub/grub.cfg; then
+    sed -i '/linux .*vmlinuz/ {
+        /pcie_aspm=off/! s/$/ pcie_aspm=off/
+    }' /boot/grub/grub.cfg
+fi
+
 parted -f -s /dev/sda resizepart 2 100%
 
 losetup /dev/loop0 /dev/sda2 2> /dev/null
